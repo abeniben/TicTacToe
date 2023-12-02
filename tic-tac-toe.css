@@ -23,6 +23,7 @@ body{
 #info{
   font-style: oblique;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: capitalize;
   
 }
 .square{

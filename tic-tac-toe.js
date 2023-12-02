@@ -14,6 +14,7 @@ function createBoard(){
        cellElement.classList.add('square')
        cellElement.id=index
        replayBtn.style.display = 'none'
+       replayBtn.textContent = 'Replay'
        cellElement.addEventListener('click', addGo)
        gameboard.append(cellElement)
    })
@@ -26,7 +27,7 @@ function addGo(e){
     goDisplay.classList.add(go)
     e.target.append(goDisplay)
     go = go === "circle" ? "cross" : "circle"
-    infoDisplay.textContent = go + "'s" + " go"
+    infoDisplay.textContent = go + "'s" + " turn"
     e.target.removeEventListener('click', addGo)
     checkScore()
 }
@@ -62,17 +63,27 @@ function checkScore(){
          }
      })
      
-function replayGame(){
-    infoDisplay.textContent = "Circle goes first"
-    cellElement.removeChild(goDisplay)
-}
+   // Code for draw goes here  
+    /* startCell.forEach((cell)=>{
+            while(cell.firstchild = 'circle' ){
+             infoDisplay.textContent = 'Match has been drawn'
+             infoDisplay.style.color
+            }
+        })*/
+    }
+
 replayBtn.addEventListener('click', replayGame)
+
+function replayGame(){
+    window.location.reload(true)
+}
+
+
      //Write a code for a draw
-     //Create a button to restart the game
+     //Create a button to restart the game     ----> DONE!
      // const draw = array(cell => allsquares[cell].firstchild)
     /* if(allSquares.firstChild.classList.contains('circle') 
         allSquares.firstChild.classList.contains('cross')){
         infoDisplay.textContent="Game Ended with no winner! "
        }*/
     
-}
